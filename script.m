@@ -1,9 +1,30 @@
-y3= rand(1000,1);
+clc
+clear all
+close all
 
-m=fft(y3);
-m2=fft(m)/100;
-m3=fft(m2)/100;
-m4=fft(m3)/100;
-m5=fft(m4);
-m6=fft(m5)/100;
-m7=fft(m6)/100
+%red neuronal parametros de musica
+
+
+[x, Fs, nbits, readinfo] = wavread('piano.wav');
+x=x(:,1);
+
+%sound(x, Fs);
+% x2=fft(x);
+% x3=fft(x2);
+% x4=fft(x3);
+% x5=fft(x4);
+ 
+tamano=size(x);
+tamano=tamano(1);
+minimo=tamano*0.8;
+maximo=tamano*2;
+ y=[1]
+ for i = minimo:1e100
+     w1=rand(i,tamano);
+     
+       w2=y*pinv(tanh(w1*x))
+       if i>maximo
+           i=minimo;
+       end
+ end
+w2
