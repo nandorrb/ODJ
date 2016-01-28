@@ -18,7 +18,8 @@ tamano=size(x);
 tamano=tamano(1);
 minimo=tamano*0.8;
 maximo=tamano*2;
- y=[1]
+ y=ones(size(x));
+ 
  for i = minimo:1e100
      w1=rand(i,tamano);
      
